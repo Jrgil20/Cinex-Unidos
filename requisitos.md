@@ -26,7 +26,7 @@ Por tal motivo, usted y su equipo deben realizar una propuesta para que la exper
 
 - Debido a que la competencia más próxima a Cinex Unidos ha ido perfilando su imagen comercial de manera similar a la de la empresa, usted tiene la libertad de proponer diseños que reemplacen la imagen actual de la empresa, de forma tal de marcar diferencias significativas entre la marca de Cinex Unidos y la de su competencia.
 
-## Requerimentos Adicionales
+## Requerimentos
 
 Aunque el servidor y las APIs necesarisa para habilitar las funcionalidades principales del producto (p. ej. catálogo de salas de cine, películas, funciones, lista de asientos, chucherías disponibles, pagos, etc.) serán proporcionadas por Cinex Unidos, usted y su equipo deben preparar un conjunto mínimo de datos de prueba, que puedan usarse en caso de indisponibilidad de los servicios "dummy" de Cinex Unidos. En todo caso, usted y su equipo deben concentrarse exclusivamente en el desarrollo del lado del cliente (front-end) y datos de prueba.
 
