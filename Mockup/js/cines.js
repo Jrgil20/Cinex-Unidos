@@ -14,7 +14,8 @@ fetch('https://cinexunidos-production.up.railway.app/theatres', {
         direccion.textContent = cine.location;
 
         carta.addEventListener('click', () => {
-            window.location.href = 'cine.html?cine='+ cine.id;
+         window.location.href = `cine.html?cine=${cine.id}`;
+
         });
 
         carta.appendChild(nombreCine);
