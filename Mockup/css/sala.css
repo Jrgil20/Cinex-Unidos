@@ -1,0 +1,21 @@
+.asientos {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+    .asiento {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    }
+
+    .asiento.ocupado {
+    background-color: #f00;
+    }
+
+    .asiento.seleccionado {
+    background-color: #0f0;
+    }
