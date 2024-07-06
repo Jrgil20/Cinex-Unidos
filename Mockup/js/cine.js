@@ -38,7 +38,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}`, {
         contenedorAuditorios.appendChild(cartaAuditorio);
 
         cartaAuditorio.addEventListener('click', () => {
-            window.location.href = `auditorio.html?cine=${id}&auditorio=${auditorio.id}`;
+            window.location.href = `sala.html?cine=${id}&auditorio=${auditorio.id}`;
             src
         });
     
