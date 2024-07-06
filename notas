@@ -9,6 +9,19 @@
 # Descripción:  los teatros tienen una lista de auditorios y cada auditorio tiene una lista de horarios y cada horario tiene una lista de asientos
 # Detalles: 
 
+# ejemplo de solicitud
+  fetch('https://cinexunidos-production.up.railway.app/theatres', {
+    method: 'GET',
+  }).then(response => response.json())
+    .then(data => {
+      console.log(data);
+      });
+    })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
 [
   {
     "id": "id del teatro",
@@ -49,12 +62,37 @@
 # Descripción: el teatro tiene una lista de auditorios y cada auditorio tiene una lista de horarios y cada horario tiene una lista de asientos
 # Detalles: 
 
+# ejemplo de solicitud
+  fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}`, {
+    method: 'GET',
+  }).then(response => response.json())
+    .then(data => {
+      console.log(data);
+      });
+    })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
 #GET /theater/:id/auditorium
 # permite obtener la lista de auditorios de un teatro determinado
 
 # Nota 1: traer informacion de los auditorios de un teatro en especifico
 # Descripción: el auditorio tiene una lista de horarios y cada horario tiene una lista de asientos
 # Detalles:
+
+# ejemplo de solicitud
+  fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditorium`, {
+    method: 'GET',
+  }).then(response => response.json())
+    .then(data => {
+      console.log(data);
+      });
+    })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
 #GET /theater/:id/auditorium/:id
 # permite obtener la información de un auditorio determinado
@@ -63,6 +101,18 @@
 # Descripción: el auditorio tiene una lista de horarios y cada horario tiene una lista de asientos
 # Detalles:
 
+# ejemplo de solicitud
+  fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditorium/${id}`, {
+    method: 'GET',
+  }).then(response => response.json())
+    .then(data => {
+      console.log(data);
+      });
+    })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
 #GET /theater/:id/auditorium/:id/showtime
 # permite obtener la lista de horarios de un auditorio determinado
 
@@ -70,12 +120,36 @@
 # Descripción: el horario tiene una lista de asientos
 # Detalles:
 
+# ejemplo de solicitud
+  fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditorium/${id}/showtime`, {
+    method: 'GET',
+  }).then(response => response.json())
+    .then(data => {
+      console.log(data);
+      });
+    })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
 #GET /theater/:id/auditorium/:id/showtime/:id
 # permite obtener la información de un horario determinado
 
 # Nota 1: traer informacion de un horario en especifico
 # Descripción: el horario tiene una lista de asientos
 # Detalles:
+
+# ejemplo de solicitud
+  fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditorium/${id}/showtime/${id}`, {
+    method: 'GET',
+  }).then(response => response.json())
+    .then(data => {
+      console.log(data);
+      });
+    })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
 #Post /theater/:id/auditorium/:id/showtime/:id/reserve
 # permite reservar un asiento en un horario determinado
