@@ -1,4 +1,15 @@
-.asientos {
+.lista-asientos{
+    display: flexbox;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 20px;
+  }
+  
+  .fila .asientos {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-gap: 10px;
@@ -18,4 +29,4 @@
   
       .asiento.seleccionado {
       background-color: #0f0;
-      }
+        }
