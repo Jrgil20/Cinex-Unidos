@@ -59,6 +59,12 @@ main {
                 margin-bottom: 20px;
         }
         
+        .informacion {
+            display: flexbox;
+            justify-content: center;
+            width: 100%;
+        }
+
 
 /* Estilos para el pie de página */
 footer {
