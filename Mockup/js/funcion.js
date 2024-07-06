@@ -30,8 +30,39 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
     duracion.textContent = data.movie.runtime;
     informacionfuncion.appendChild(duracion);
 
+    const contenedorAsientos = document.getElementById('asientos-container');
+    for (const row in data.seats) {
+        if (data.seats.hasOwnProperty(row)) {
+            console.log(`Fila ${row}:`);
+            const fila = document.createElement('div');
+            fila.classList.add('fila');
+            data.seats[row].forEach(seat => {
+                const asiento = document.createElement('div');
+                asiento.classList.add('asiento');
+                if (seat === 1) {
+                    asiento.classList.add('selecionado');
+                }else{
+                    if (seat === 2) {
+                        asiento.classList.add('ocupado');
+                    }
+                }
 
-    
+                fila.appendChild(asiento);
+
+
+                asiento.addEventListener('click', () => {
+                    if (asiento.classList.contains('selecionado')) {
+                        asiento.classList.remove('selecionado');
+                    }else{
+                        asiento.classList.add('selecionado');
+                    }
+                });
+
+            });
+
+            contenedorAsientos.appendChild(fila);
+        }
+    }
 
 })
 .catch(error => {

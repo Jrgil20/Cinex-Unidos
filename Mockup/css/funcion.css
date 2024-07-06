@@ -1,24 +1,25 @@
-.lista-asientos{
-    display: flexbox;
+.asientos-container{
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
 }
 
 .fila {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    padding: 20px;
+    display: inline-flex;
+
+    grid-gap: 5px;
+    padding: 10px;
   }
   
   .fila .asientos {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
     grid-gap: 10px;
     padding: 20px;
   }
   
       .asiento {
-      width: 50px;
-      height: 50px;
+      width: 15px;
+      height: 15px;
       background-color: #ccc;
       border: 1px solid #000;
       }
