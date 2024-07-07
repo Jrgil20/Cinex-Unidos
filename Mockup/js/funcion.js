@@ -43,6 +43,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                 const asiento = document.createElement('div');
                 const numeroAsiento = document.createElement('p');
                 numeroAsiento.textContent = row +contadordeAsientos;
+                asiento.id = row +contadordeAsientos;
                 asiento.appendChild(numeroAsiento);
                 asiento.classList.add('asiento');
                 if (seat === -1) {
@@ -140,22 +141,16 @@ function LiberarAsientos(asiento) {
 }
 
 function InspecionarAsientos() {
-    console.log('subcribiendose a notificaciones de los asientos');
-    fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/${idAuditorio}/showtimes/${idFuncion}/reservation-updates`, {
-        method: 'GET',
-    })
-    .then(response => {
-        console.log(`Estado de la respuesta: ${response.status}`); // Imprime el código de estado
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`); // Lanza un error si el estado indica un error
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('subcrito a notificaciones de los asientos');
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    const evtSource = new EventSource(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/${idAuditorio}/showtimes/${idFuncion}/reservation-updates`);
+
+    evtSource.onmessage = function(event) {
+        console.log('New message:', event.data);
+        if (event.data.result === 'SEAT_RESERVED') {
+            console.log('Asiento reservado');
+    };
+
+    evtSource.onerror = function(error) {
+        console.error('EventSource failed:', error);
+    };
+}
 }
