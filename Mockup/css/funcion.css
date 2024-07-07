@@ -1,3 +1,9 @@
+.poster {
+    width: 70%;
+    height: 80%;
+    object-fit: cover;
+}
+
 .asientos-container{
     display: grid;
     grid-gap: 10px;
@@ -15,19 +21,24 @@
     display: grid;
     grid-gap: 10px;
     padding: 20px;
+    font-size: small;
   }
   
       .asiento {
-      width: 15px;
-      height: 15px;
+      max-width: 25%;
+      height: 80%;
       background-color: #ccc;
       border: 1px solid #000;
       }
-  
-      .asiento.ocupado {
+      
+      .asiento.selecionado {
       background-color: #f00;
       }
+
+      .asiento.ocupado {
+      background-color: #ff0
+        }
   
-      .asiento.seleccionado {
+      .asiento.disponible {
       background-color: #0f0;
         }

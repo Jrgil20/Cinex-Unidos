@@ -23,7 +23,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
       card.classList.add('funcion-card');
 
       const poster = document.createElement('img');
-      poster.src = showtime.movie.poster;
+      poster.src = `https://cinexunidos-production.up.railway.app/${showtime.movie.poster}`
 
       const pelicula = document.createElement('h3');
       pelicula.textContent = `Pelicula: ${showtime.movie.name}`;
