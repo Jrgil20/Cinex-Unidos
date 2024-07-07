@@ -137,3 +137,16 @@ function LiberarAsientos(asiento) {
         console.error('Error:', error);
     });
 }
+
+function InspecionarAsientos() {
+    fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/${idAuditorio}/showtimes/${idFuncion}/reservationUpdates`, {
+        method: 'GET',
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
