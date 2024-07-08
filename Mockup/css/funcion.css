@@ -1,0 +1,44 @@
+.poster {
+    width: 70%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.asientos-container{
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.fila {
+    display: inline-flex;
+
+    grid-gap: 5px;
+    padding: 10px;
+  }
+  
+  .fila .asientos {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+    font-size: small;
+  }
+  
+      .asiento {
+      max-width: 25%;
+      height: 80%;
+      background-color: #ccc;
+      border: 1px solid #000;
+      }
+      
+      .asiento.selecionado {
+      background-color: #f00;
+      }
+
+      .asiento.ocupado {
+      background-color: #ff0
+        }
+  
+      .asiento.disponible {
+      background-color: #0f0;
+        }
