@@ -144,10 +144,17 @@ function InspecionarAsientos() {
     const evtSource = new EventSource(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/${idAuditorio}/showtimes/${idFuncion}/reservation-updates`);
 
     evtSource.onmessage = function(event) {
-        console.log('New message:', event.data);
-        if (event.data.result === 'SEAT_RESERVED') {
-            console.log('Asiento reservado');
-    };
+        console.log('message', event.data);
+        const dataObj = JSON.parse(event.data); 
+        if (dataObj.result === 'SEAT_RESERVED') {
+            console.log('Asiento '+dataObj.seat+' reservado');
+            document.getElementById(dataObj.seat).classList.remove('disponible');
+        } else {
+            if (dataObj.result === 'SEAT_RELEASED') {
+                console.log('Asiento '+dataObj.seat+' liberado');
+                document.getElementById(dataObj.seat).classList.add('disponible');
+            }
+        };
 
     evtSource.onerror = function(error) {
         console.error('EventSource failed:', error);

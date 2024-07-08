@@ -11,11 +11,17 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}`, {
     const nombreCine = document.createElement('h2');
     nombreCine.textContent = data.name;
 
+    const logo = document.createElement('img');
+    logo.src = `https://cinexunidos-production.up.railway.app/${data.images[0]}`;
+    logo.alt = data.name;
+    logo.classList.add('logo');
+
     const localizacionCine = document.createElement('p');
     localizacionCine.textContent = data.location;
 
     const contenedorInformacion = document.getElementById('informacion-container');
     contenedorInformacion.appendChild(nombreCine);
+    contenedorInformacion.appendChild(logo);
     contenedorInformacion.appendChild(localizacionCine);
 
     const auditorios = data.auditoriums;

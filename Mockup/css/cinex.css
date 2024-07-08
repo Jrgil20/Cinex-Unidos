@@ -13,3 +13,8 @@
   padding: 20px;
   margin-bottom: 20px;
 }
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}

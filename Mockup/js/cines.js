@@ -10,6 +10,8 @@ fetch('https://cinexunidos-production.up.railway.app/theatres', {
         carta.classList.add('card');
         const nombreCine = document.createElement('h3');
         nombreCine.textContent = cine.name;
+        const imagen = document.createElement('img');
+        imagen.src = `https://cinexunidos-production.up.railway.app/${cine.images[1]}`;
         const direccion = document.createElement('p');
         direccion.textContent = cine.location;
 
@@ -19,6 +21,7 @@ fetch('https://cinexunidos-production.up.railway.app/theatres', {
         });
 
         carta.appendChild(nombreCine);
+        carta.appendChild(imagen);
         carta.appendChild(direccion);
         cinesContainer.appendChild(carta);
     });
