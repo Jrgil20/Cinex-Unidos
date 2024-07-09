@@ -33,19 +33,29 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
     informacionfuncion.appendChild(duracion);
     let contadordeAsientos = 0;
     const contenedorAsientos = document.getElementById('asientos-container');
+    
     for (const row in data.seats) {
         if (data.seats.hasOwnProperty(row)) {
             console.log(`Fila ${row}:`);
             const fila = document.createElement('div');
             fila.classList.add('fila');
+
+            const filaNumero = document.createElement('p');
+            filaNumero.textContent = `${row}:`;
+            fila.appendChild(filaNumero);
+
             contadordeAsientos = 0;
             data.seats[row].forEach(seat => {
                 const asiento = document.createElement('div');
                 const numeroAsiento = document.createElement('p');
-                numeroAsiento.textContent = row +contadordeAsientos;
-                asiento.id = row +contadordeAsientos;
+                numeroAsiento.textContent = contadordeAsientos;
+                asiento.id = row +contadordeAsientos;                
                 asiento.appendChild(numeroAsiento);
+
+
                 asiento.classList.add('asiento');
+
+
                 if (seat === -1) {
                     asiento.style.visibility = 'hidden';
                 }else{
@@ -66,11 +76,11 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                         if (asiento.classList.contains('selecionado')) {
                             asiento.classList.remove('selecionado');
                             asiento.classList.add('disponible');
-                            LiberarAsientos(numeroAsiento.textContent);
+                            LiberarAsientos(asiento.id);
                         }else{
                             asiento.classList.add('selecionado');
                             asiento.classList.remove('disponible');
-                            ReservarAsientos(numeroAsiento.textContent);
+                            ReservarAsientos(asiento.id);
                         }
                     });
                 }
