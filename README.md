@@ -17,7 +17,7 @@ Para ejecutar este proyecto, sigue los siguientes pasos:
 1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
 
     ```bash
-    git clone https://github.com/tu-usuario/Cinex-Unidos.git
+    git clone https://github.com/Jrgil20/Cinex-Unidos.git
     ```
 
 2. Entra en la carpeta `\Mockup`
