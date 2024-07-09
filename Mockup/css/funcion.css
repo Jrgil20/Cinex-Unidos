@@ -1,6 +1,13 @@
+.informacion {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+}
+
 .poster {
     width: 70%;
-    height: 80%;
+    max-width: 700px;
+    height: auto;
     object-fit: cover;
 }
 
@@ -26,7 +33,8 @@
   
       .asiento {
       max-width: 25%;
-      height: 80%;
+      min-width: 6%;
+      height: 75%;
       background-color: #ccc;
       border: 1px solid #000;
       }
@@ -42,3 +50,5 @@
       .asiento.disponible {
       background-color: #0f0;
         }
+
+        
