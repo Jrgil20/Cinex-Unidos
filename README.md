@@ -5,7 +5,7 @@ Este es un proyecto académico de front-end que utiliza la API de Cinex Unidos. 
 # Sobre el proyecto
 Este proyecto consiste en una página web que simula una plataforma de cines. Fue desarrollado como parte de un proyecto académico de front-end utilizando la API de Cinex Unidos. El objetivo principal de esta aplicación es brindar una experiencia interactiva para los usuarios, permitiéndoles explorar las películas en cartelera, ver horarios y comprar boletos de manera virtual. Además, se enfoca en la práctica de tecnologías como HTML, CSS y JavaScript para el desarrollo de la interfaz de usuario. 
 
-# Taller
+## Taller
 
 Para ver los pasos de cómo llegar al taller, sigue el enlace proporcionado a continuacion
 
