@@ -16,5 +16,6 @@
 
 .card img {
   width: 100%;
+  max-width: 420px;
   border-radius: 5px;
 }
