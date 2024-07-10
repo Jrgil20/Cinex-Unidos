@@ -1,3 +1,8 @@
+.auditorio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .carta-auditorio {
   display: flex;
