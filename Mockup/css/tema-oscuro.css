@@ -1,4 +1,19 @@
 body {
-  background-color: #000;
+  background-color: #666;
   color: #fff;
+}
+
+header {
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+      nav ul li a {
+        color: #111;
+      }
+
+
+footer {
+  background-color: #f3f3f3;
+  color: #333;
 }
