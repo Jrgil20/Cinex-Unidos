@@ -1,3 +1,16 @@
+.funciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.informacion {
+  align-content: center;
+  text-align: center;
+  margin-bottom: 20px ;
+}
+
 .card {
   background-color: #fff;
   border: 1px solid #ccc;

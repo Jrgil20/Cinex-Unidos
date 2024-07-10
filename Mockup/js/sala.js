@@ -6,7 +6,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
 }).then(response => response.json())
   .then(data => {
     const informacionContainer = document.getElementById('informacion-container');
-    const nombreAuditorio = document.createElement('h2');
+    const nombreAuditorio = document.createElement('h1');
     nombreAuditorio.textContent = data.name;
     const capacidadAuditorio = document.createElement('p');
     capacidadAuditorio.textContent = `Capacidad: ${data.capacity}`;
@@ -42,7 +42,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
       card.addEventListener('click', () => {
         window.location.href = `funcion.html?cine=${id}&auditorio=${idAuditorio}&showtime=${showtime.id}`;
       });
-      informacionContainer.appendChild(card);
+      funcionescontainer.appendChild(card);
     });
 
   })
