@@ -1,0 +1,21 @@
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+}
+
+
+
+      nav ul li a {
+        color: #fff;
+      }
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+}
