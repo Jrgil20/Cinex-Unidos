@@ -47,6 +47,10 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    transition: justify-content 0.5s ease-in-out;
+    transition: flex-direction 0.5s ease-in-out;
+    transition: align-items 0.5s ease-in-out;
+
   }
 }
 
