@@ -1,3 +1,9 @@
+header nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .informacion {
     display: grid;
     grid-gap: 10px;

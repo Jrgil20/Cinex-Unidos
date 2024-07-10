@@ -1,3 +1,9 @@
+header nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .card {
     background-color: #fff;
     border: 1px solid #ccc;
