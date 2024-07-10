@@ -19,9 +19,7 @@ header nav ul{
   height: 200px;
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .logo{

@@ -19,6 +19,22 @@ header {
     border: 1px solid #ccc;
   }
 
+  #cines {
+    background-color: #f5f5f5;
+  }
+
+  .carta-auditorio {
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  }
+
+
+  .asiento {
+    background-color: #ccc;
+    border: 1px solid #000;
+    }
+    
+
 
 footer {
   background-color: #333;
