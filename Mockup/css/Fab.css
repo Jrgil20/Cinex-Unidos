@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+.floating-menu {
+	position: absolute;
+	bottom: 98px;
+	right: 8px;
+	margin: 10px;
+	z-index: 999;
+}
+
+.oculto{
+	display: none;
+}
+
+.floating-menu-icon{
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	vertical-align: middle;
+	background: #817575;
+	border-radius: 50%;
+	border: none;
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	text-align: center;
+
+}
