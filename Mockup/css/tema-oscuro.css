@@ -1,19 +1,36 @@
 body {
-  background-color: #666;
+  background-color: #0c0414;
   color: #fff;
 }
 
 header {
-  background-color: #f3f3f3;
+  background-color: #07023d;
   color: #333;
 }
 
       nav ul li a {
-        color: #111;
+        color: #ffffff;
       }
 
+.card {
+    background-color: #000000;
+    border: 1px solid #ccc;
+  }
 
+  #cines {
+    background-color: #333;
+  }
+
+  .carta-auditorio {
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  }
 footer {
-  background-color: #f3f3f3;
-  color: #333;
+  background-color: #412485;
+  color: #ffffff;
+}
+
+.tooltip {
+  background-color: #000000;
+  border: 1px solid #ddd;
 }

@@ -1,10 +1,10 @@
 body {
-  background-color: #ffffff;
+  background-color: #EAE2B7;
   color: #000000;
 }
 
 header {
-  background-color: #333;
+  background-color: #003049;
   color: #fff;
 }
 
@@ -16,7 +16,7 @@ header {
 
 .card {
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
   }
 
   #cines {
@@ -27,9 +27,13 @@ header {
     border: 1px solid black;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   }
+
+
+  
     
 
+
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #F77F00;
+  color: #000000;
 }
