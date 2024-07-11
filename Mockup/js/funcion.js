@@ -40,8 +40,10 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
             const fila = document.createElement('div');
             fila.classList.add('fila');
 
-            const filaNumero = document.createElement('p');
-            filaNumero.textContent = `${row}:`;
+            const filaNumero = document.createElement('h3');
+            filaNumero.textContent = `${row}`;
+            filaNumero.style.paddingRight = '30px';
+            filaNumero.style.marginTop = '5px';
             fila.appendChild(filaNumero);
 
             contadordeAsientos = 0;
@@ -49,7 +51,26 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                 const asiento = document.createElement('div');
                 const numeroAsiento = document.createElement('p');
                 numeroAsiento.textContent = contadordeAsientos;
-                asiento.id = row +contadordeAsientos;                
+                numeroAsiento.style.display = 'none';
+                asiento.id = row +contadordeAsientos;
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = `Asiento ${asiento.id}`;
+
+                // Agrega el evento mouseover para mostrar el tooltip
+                asiento.addEventListener('mouseover', () => {
+                tooltip.style.display = 'block';
+                tooltip.style.top = `${asiento.offsetTop - tooltip.offsetHeight}px`;
+                tooltip.style.left = `${asiento.offsetLeft + (asiento.offsetWidth - tooltip.offsetWidth) / 2}px`;
+                });
+
+                // Agrega el evento mouseout para ocultar el tooltip
+                asiento.addEventListener('mouseout', () => {
+                tooltip.style.display = 'none';
+                });
+
+                // Agrega el tooltip al asiento
+                asiento.appendChild(tooltip);  
                 asiento.appendChild(numeroAsiento);
 
 
