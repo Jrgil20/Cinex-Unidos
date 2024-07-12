@@ -28,9 +28,34 @@ header {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   }
 
+/* por modificar:*/
+  .modal { 
+    background-color: rgba(0,0,0,0.4);     
+  }
 
-  
-    
+  .modal-content {     
+    background-color: #fefefe;        
+    border: 1px solid #888;        
+  }
+
+  .close {     
+    color: #aaa;     
+  }
+
+    .close:hover, .close:focus {
+        color: black;
+    }
+/* Estilo para el slider */
+
+.slider {    
+    background-color: #ccc;
+}
+
+/* Estilo para el slider antes de ser activado */
+
+.slider:before {    
+    background-color: white;  
+}
 
 
 footer {
