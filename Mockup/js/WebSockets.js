@@ -13,7 +13,7 @@ document.getElementById('sendButton').addEventListener('click', () => {
         const chatMessage = document.createElement('div');
         chatMessage.classList.add('chat-message');
         chatMessage.textContent = message;
-        chatMessage.appendChild(chatMessage);
+        document.getElementById('ventanaChat').appendChild(chatMessage);
         chatInput.value = '';
         socket.emit('send-message', message);
     }
@@ -57,7 +57,9 @@ socket.on('disconnect', () => {
 
 //socket.on('online-users', renderUsers);
 
-//socket.on('new-message', renderMessage);
+socket.on('new-message', renderMessage);
 
 //cerramos el socket
-//socket.close();
+window.addEventListener('unload', () => {
+   socket.close();
+})
