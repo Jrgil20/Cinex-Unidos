@@ -119,6 +119,7 @@ floatingModalSwitchInput.addEventListener('change', () => {
     location.reload();
 });
 
+/* se deberia crear una funcion crear modal flotante */
 /* Floating Modal 2 */
 const floatingModal2 = document.createElement('div');
 floatingModal2.classList.add('modal');
@@ -134,6 +135,40 @@ floatingModalClose2.classList.add('close');
 floatingModalClose2.innerHTML = '&times;';
 floatingModalContent2.appendChild(floatingModalClose2);
 
+const chatWindow = document.createElement('div');
+chatWindow.classList.add('chat-window');
+floatingModalContent2.appendChild(chatWindow);
+
+const chatHeader = document.createElement('div');
+chatHeader.classList.add('chat-header');
+chatHeader.textContent = 'Chat Window';
+chatWindow.appendChild(chatHeader);
+
+const chatMessages = document.createElement('div');
+chatMessages.classList.add('chat-messages');
+chatWindow.appendChild(chatMessages);
+
+const chatInput = document.createElement('input');
+chatInput.classList.add('chat-input');
+chatInput.placeholder = 'Type your message...';
+chatWindow.appendChild(chatInput);
+
+const chatSendButton = document.createElement('button');
+chatSendButton.classList.add('chat-send-button');
+chatSendButton.textContent = 'Send';
+chatWindow.appendChild(chatSendButton);
+
+chatSendButton.addEventListener('click', () => {
+    const message = chatInput.value;
+    if (message.trim() !== '') {
+        const chatMessage = document.createElement('div');
+        chatMessage.classList.add('chat-message');
+        chatMessage.textContent = message;
+        chatMessages.appendChild(chatMessage);
+        chatInput.value = '';
+    }
+});
+
 floatingMenuIcon3.addEventListener('click', () => {
     floatingModal2.style.display = 'inline-block';
 });
@@ -141,6 +176,10 @@ floatingMenuIcon3.addEventListener('click', () => {
 floatingModalClose2.onclick = function () {
     floatingModal2.style.display = 'none';
 }
+
+
+
+
 
 window.onclick = function (event) {
 
