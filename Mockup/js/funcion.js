@@ -73,21 +73,9 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
 
                  asiento.addEventListener('mouseenter',() => {
                      if(asiento.classList.contains('disponible')){
-                        const queryString = window.location.search;
-
-                        const urlParams = new URLSearchParams(queryString);
-
-                        let cine = urlParams.get('cine');
-
-                        let sala = urlParams.get('auditorio');
-
-                        let funcion = document.getElementById('horarioEmpieza').textContent;
-
                         let movieName = document.getElementById('nombrePelicula').textContent
 
-                        let idAsiento = asiento.id;
-
-                        const mensaje = `Usuario en el asiento ${idAsiento} en el cine ${cine}, en la sala ${sala} en el horario ${funcion} de la pelicula ${movieName}`;
+                        const mensaje = `Usuario en el asiento ${asiento.id} en el cine ${id}, en la sala ${idAuditorio} en el horario ${idFuncion} de la pelicula ${movieName}`;
 
                         console.log(mensaje)
                      }

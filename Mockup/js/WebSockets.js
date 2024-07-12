@@ -8,42 +8,47 @@ const socket = io('https://cinexunidos-production.up.railway.app',{
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    //enviamos un mensaje
     document.getElementById('sendButton').addEventListener('click', () => {
-        const message = chatInput.value;
-        if (message.trim() !== '') {
-            const chatMessage = document.createElement('div');
-            chatMessage.classList.add('chat-message');
-            chatMessage.textContent = message;
-            // Corrección: Agrega el mensaje al contenedor de mensajes, no a sí mismo
-            chatMessages.appendChild(chatMessage);
+        const mensaje = chatInput.value;
+        if (mensaje.trim() !== '') {
+            
             chatInput.value = '';
+
+            console.log(mensaje)
+            const message= {
+                content: mensaje,
+                action: 'chat-message',
+            }
             socket.emit('send-message', message);
         }
     });
 });
 
 // recibimos un mensaje del socket
-const renderMessage = (payload) => {
-    //toma los datos del payload y los almacena en variables
+const ProcesarMessage = (payload) =>{
+    console.log(payload);
     const { id, message, name } = payload;
-    // Crea un elemento <div> para el mensaje
-    const $divElement = document.createElement('div');
-    // Agrega la clase 'message' al elemento <div>
-    $divElement.classList.add('message');
+    console.log(` id: ${id} de nombre ${name} manda el mensaje ${message}`);
+    const { content,action} = message;
+    console.log(` el mensaje es un ${action} `);
+    if (action === 'chat-message'){
+        const chatMessage = document.createElement('div');
+        chatMessage.classList.add('chat-message');
+        chatMessage.textContent = content;
+        
 
-    if (id !== socket.id) {
-        // compara el id del paylod con el id del socket de comunicacion
-        $divElement.classList.add('incoming');
-        // que hara esta clase incoming, parece diferenciar los mensajes entrantes d elos salientes
+        if (id !== socket.id) {
+            console.log(`mensaje entrante dice : ${content}`);
+            chatMessage.classList.add('incoming');
+        }
+
+        chatMessages.appendChild(chatMessage);
     }
 
-    // Agrega el contenido del mensaje al elemento <div>
-    //ivElement.innerHTML = `<small>${name}</small><p>${message}</p>`;
-    console.log(message);
-    // Agrega el elemento <div> al chat
-    //document.getElementById('ventanaChat').appendChild($divElement);
+}
 
-};
+
 
 // se conecta el socket un mensaje del socket
 socket.on('connect', () => {
@@ -61,7 +66,8 @@ socket.on('disconnect', () => {
 
 //socket.on('online-users', renderUsers);
 
-socket.on('new-message', renderMessage);
+//recibe un nuevo mensaje
+socket.on('new-message', ProcesarMessage);
 
 //cerramos el socket
 window.addEventListener('unload', () => {
