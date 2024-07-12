@@ -1,6 +1,6 @@
 
 //abrimos el socket
-const socket = io({
+const socket = io('https://cinexunidos-production.up.railway.app',{
     auth: {
         token: 'ABC-456', // Se debería sustituir por un token real...
         name: 'user1',
@@ -13,7 +13,7 @@ document.getElementById('sendButton').addEventListener('click', () => {
         const chatMessage = document.createElement('div');
         chatMessage.classList.add('chat-message');
         chatMessage.textContent = message;
-        chatMessages.appendChild(chatMessage);
+        chatMessage.appendChild(chatMessage);
         chatInput.value = '';
         socket.emit('send-message', message);
     }
