@@ -69,6 +69,20 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                 tooltip.style.display = 'none';
                 });
 
+                 asiento.addEventListener('mouseenter',() => {
+                     if(asiento.classList.contains('disponible')){
+                        const queryString = window.location.search;
+
+                        const urlParams = new URLSearchParams(queryString);
+
+                        let cine = urlParams.get('cine');
+
+                        let sala = urlParams.get('auditorio');
+
+                        console.log(cine,sala);
+                     }
+                })
+
                 // Agrega el tooltip al asiento
                 asiento.appendChild(tooltip);  
                 asiento.appendChild(numeroAsiento);
