@@ -49,7 +49,7 @@ floatingModalClose.innerHTML = '&times;';
 floatingModalContent.appendChild(floatingModalClose);
 
 floatingMenuIcon2.addEventListener('click', () => {
-    floatingModal.style.display = 'block';
+    floatingModal.style.display = 'inline-block';
 });
 
 floatingModalClose.onclick = function () {
@@ -70,6 +70,40 @@ floatingModalLabel.htmlFor = 'checkbox';
 floatingModalLabel.textContent = 'Elegir Tema De color';
 floatingModalForm.appendChild(floatingModalLabel);
 
+const floatingModalSwitch = document.createElement('label');
+floatingModalSwitch.classList.add('switch');
+floatingModalSwitch.style.display = 'none';
+floatingModalForm.appendChild(floatingModalSwitch);
+
+const floatingModalSwitchInput = document.createElement('input');
+floatingModalSwitchInput.type = 'checkbox';
+floatingModalSwitchInput.id = 'switchInput'; // Add an id to the input element
+floatingModalSwitch.appendChild(floatingModalSwitchInput);
+
+const floatingModalSwitchSlider = document.createElement('span');
+floatingModalSwitchSlider.classList.add('slider');
+floatingModalSwitch.appendChild(floatingModalSwitchSlider);
+
+const themeOption = localStorage.getItem('themeOption');
+if (themeOption === 'true') {
+    floatingModalCheckbox.checked = false;
+    floatingModalSwitch.style.display = 'none';
+} else {
+    floatingModalCheckbox.checked = true;
+    floatingModalSwitch.style.display = 'inline-block';
+}
+
+floatingModalCheckbox.addEventListener('change', () => {
+    if (floatingModalCheckbox.checked) {
+        floatingModalSwitch.style.display = 'inline-block';
+        localStorage.setItem('themeOption', false);
+    } else {
+        floatingModalSwitch.style.display = 'none';
+        localStorage.setItem('themeOption', true);
+    }
+});
+
+/* Floating Modal 2 */
 const floatingModal2 = document.createElement('div');
 floatingModal2.classList.add('modal');
 floatingModal2.id = 'floatingModal2';
@@ -85,7 +119,7 @@ floatingModalClose2.innerHTML = '&times;';
 floatingModalContent2.appendChild(floatingModalClose2);
 
 floatingMenuIcon3.addEventListener('click', () => {
-    floatingModal2.style.display = 'block';
+    floatingModal2.style.display = 'inline-block';
 });
 
 floatingModalClose2.onclick = function () {
@@ -100,4 +134,3 @@ window.onclick = function (event) {
         floatingModal.style.display = 'none';
     }
 }
-
