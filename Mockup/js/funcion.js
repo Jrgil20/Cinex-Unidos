@@ -12,6 +12,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
     const informacionfuncion = document.getElementById('informacion-container');
     const pelicula = document.createElement('h2');
     pelicula.textContent = data.movie.name;
+    pelicula.setAttribute('id','nombrePelicula');
     informacionfuncion.appendChild(pelicula);
 
     const poster = document.createElement('img');
@@ -22,6 +23,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
 
     const horario = document.createElement('p');
     horario.textContent = data.startTime;
+    horario.setAttribute('id','horarioEmpieza');
     informacionfuncion.appendChild(horario);
 
     const rating = document.createElement('p');
@@ -79,7 +81,15 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
 
                         let sala = urlParams.get('auditorio');
 
-                        console.log(cine,sala);
+                        let funcion = document.getElementById('horarioEmpieza').textContent;
+
+                        let movieName = document.getElementById('nombrePelicula').textContent
+
+                        let idAsiento = asiento.id;
+
+                        const mensaje = `Usuario en el asiento ${idAsiento} en el cine ${cine}, en la sala ${sala} en el horario ${funcion} de la pelicula ${movieName}`;
+
+                        console.log(mensaje)
                      }
                 })
 

@@ -53,8 +53,8 @@ socket.on('connect', () => {
 });
 
 socket.on('disconnect', () => {
-    $onlineStatus.classList.add('hidden');
-    $offlineStatus.classList.remove('hidden');
+    //$onlineStatus.classList.add('hidden');
+    //$offlineStatus.classList.remove('hidden');
     console.log('Disconnected');
 });
 
