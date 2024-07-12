@@ -137,6 +137,7 @@ floatingModalContent2.appendChild(floatingModalClose2);
 
 const chatWindow = document.createElement('div');
 chatWindow.classList.add('chat-window');
+chatWindow.setAttribute('id','ventanaChat');
 floatingModalContent2.appendChild(chatWindow);
 
 const chatHeader = document.createElement('div');
@@ -155,19 +156,9 @@ chatWindow.appendChild(chatInput);
 
 const chatSendButton = document.createElement('button');
 chatSendButton.classList.add('chat-send-button');
+chatSendButton.setAttribute('id','sendButton');
 chatSendButton.textContent = 'Send';
 chatWindow.appendChild(chatSendButton);
-
-chatSendButton.addEventListener('click', () => {
-    const message = chatInput.value;
-    if (message.trim() !== '') {
-        const chatMessage = document.createElement('div');
-        chatMessage.classList.add('chat-message');
-        chatMessage.textContent = message;
-        chatMessages.appendChild(chatMessage);
-        chatInput.value = '';
-    }
-});
 
 floatingMenuIcon3.addEventListener('click', () => {
     floatingModal2.style.display = 'inline-block';

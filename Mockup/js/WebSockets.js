@@ -1,3 +1,4 @@
+
 //abrimos el socket
 const socket = io({
     auth: {
@@ -6,13 +7,44 @@ const socket = io({
     },
 });
 
-// le enviamos un mensaje al socket
-socket.emit('send-message', message);
+document.getElementById('sendButton').addEventListener('click', () => {
+    const message = chatInput.value;
+    if (message.trim() !== '') {
+        const chatMessage = document.createElement('div');
+        chatMessage.classList.add('chat-message');
+        chatMessage.textContent = message;
+        chatMessages.appendChild(chatMessage);
+        chatInput.value = '';
+        socket.emit('send-message', message);
+    }
+});
 
 // recibimos un mensaje del socket
+const renderMessage = (payload) => {
+    //toma los datos del payload y los almacena en variables
+    const { id, message, name } = payload;
+    // Crea un elemento <div> para el mensaje
+    const $divElement = document.createElement('div');
+    // Agrega la clase 'message' al elemento <div>
+    $divElement.classList.add('message');
+
+    if (id !== socket.id) {
+        // compara el id del paylod con el id del socket de comunicacion
+        $divElement.classList.add('incoming');
+        // que hara esta clase incoming, parece diferenciar los mensajes entrantes d elos salientes
+    }
+
+    // Agrega el contenido del mensaje al elemento <div>
+    $divElement.innerHTML = `<small>${name}</small><p>${message}</p>`;
+    // Agrega el elemento <div> al chat
+    document.getElementById('ventanaChat').appendChild($divElement);
+
+};
+
+// se conecta el socket un mensaje del socket
 socket.on('connect', () => {
 
-    $usernamePic.innerHTML = `<img src="https://api.dicebear.com/9.x/initials/svg?seed=${username}" alt="${username}" />`;
+   // $usernamePic.innerHTML = `<img src="https://api.dicebear.com/9.x/initials/svg?seed=${username}" alt="${username}" />`;
     console.log('Connected');
 });
 
@@ -23,9 +55,9 @@ socket.on('disconnect', () => {
 });
 
 
-socket.on('online-users', renderUsers);
+//socket.on('online-users', renderUsers);
 
-socket.on('new-message', renderMessage);
+//socket.on('new-message', renderMessage);
 
 //cerramos el socket
-socket.close();
+//socket.close();
