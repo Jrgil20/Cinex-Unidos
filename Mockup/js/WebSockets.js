@@ -38,9 +38,10 @@ const renderMessage = (payload) => {
     }
 
     // Agrega el contenido del mensaje al elemento <div>
-    $divElement.innerHTML = `<small>${name}</small><p>${message}</p>`;
+    //ivElement.innerHTML = `<small>${name}</small><p>${message}</p>`;
+    console.log(message);
     // Agrega el elemento <div> al chat
-    document.getElementById('ventanaChat').appendChild($divElement);
+    //document.getElementById('ventanaChat').appendChild($divElement);
 
 };
 
