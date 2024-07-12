@@ -1,6 +1,7 @@
 const temaLink = document.getElementById('tema-link');
 const temaOscuroLink = document.querySelector('link[href="tema-oscuro.css"]');
 
+
 function aplicarTema(tema) {
   if (tema === 'oscuro') {
     temaLink.href = 'css/tema-oscuro.css';
@@ -9,18 +10,17 @@ function aplicarTema(tema) {
   }
 }
 
-// Detecta la preferencia del usuario al cargar la página
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  aplicarTema('oscuro');
-} else {
-  aplicarTema('claro');
-}
 
-// Agrega un evento para cambiar el tema manualmente ( por un boton )
-document.getElementById('cambiar-tema').addEventListener('click', function() {
-  if (temaClaroLink.disabled) {
+
+themeOption = localStorage.getItem('themeOption');
+if (themeOption === 'true') {
+  // Detecta la preferencia del usuario al cargar la página
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     aplicarTema('oscuro');
   } else {
     aplicarTema('claro');
   }
-});
+} else {
+  themeColor = localStorage.getItem('themecolor');
+  aplicarTema(themeColor);
+}

@@ -103,6 +103,22 @@ floatingModalCheckbox.addEventListener('change', () => {
     }
 });
 
+const themeColor = localStorage.getItem('themecolor');
+if (themeColor === 'oscuro') {
+    floatingModalSwitchInput.checked = true;
+} else {
+    floatingModalSwitchInput.checked = false;
+}
+
+floatingModalSwitchInput.addEventListener('change', () => {
+    if (floatingModalSwitchInput.checked) {
+        localStorage.setItem('themecolor', 'oscuro');
+    } else {
+        localStorage.setItem('themecolor', 'claro');
+    }
+    location.reload();
+});
+
 /* Floating Modal 2 */
 const floatingModal2 = document.createElement('div');
 floatingModal2.classList.add('modal');
