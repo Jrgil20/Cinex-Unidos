@@ -7,16 +7,19 @@ const socket = io('https://cinexunidos-production.up.railway.app',{
     },
 });
 
-document.getElementById('sendButton').addEventListener('click', () => {
-    const message = chatInput.value;
-    if (message.trim() !== '') {
-        const chatMessage = document.createElement('div');
-        chatMessage.classList.add('chat-message');
-        chatMessage.textContent = message;
-        chatMessage.appendChild(chatMessage);
-        chatInput.value = '';
-        socket.emit('send-message', message);
-    }
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('sendButton').addEventListener('click', () => {
+        const message = chatInput.value;
+        if (message.trim() !== '') {
+            const chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.textContent = message;
+            // Corrección: Agrega el mensaje al contenedor de mensajes, no a sí mismo
+            chatMessages.appendChild(chatMessage);
+            chatInput.value = '';
+            socket.emit('send-message', message);
+        }
+    });
 });
 
 // recibimos un mensaje del socket
