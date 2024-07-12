@@ -1,0 +1,59 @@
+body {
+  background-color: #0c0414;
+  color: #fff;
+}
+
+header {
+  background-color: #07023d;
+  color: #333;
+}
+
+      nav ul li a {
+        color: #ffffff;
+      }
+
+.card {
+    background-color: #000000;
+    border: 1px solid #ccc;
+  }
+
+  #cines {
+    background-color: #333;
+  }
+
+  .carta-auditorio {
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  }
+
+/* por modificar:*/
+  .modal { 
+    background-color: rgba(0,0,0,0.4);     
+  }
+
+  .modal-content {     
+    background-color: #412485;        
+    border: 1px solid #888;  
+    color: #fff;      
+  }
+
+  .slider {    
+    background-color: white;
+}
+
+/* Estilo para el slider antes de ser activado */
+
+.slider:before {    
+    background-color: #000;  
+}
+
+
+footer {
+  background-color: #412485;
+  color: #ffffff;
+}
+
+.tooltip {
+  background-color: #000000;
+  border: 1px solid #ddd;
+}

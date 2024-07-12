@@ -1,3 +1,14 @@
+header nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.auditorio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .carta-auditorio {
   display: flex;
@@ -8,9 +19,7 @@
   height: 200px;
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .logo{
