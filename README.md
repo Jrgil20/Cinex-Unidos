@@ -10,6 +10,7 @@ Este proyecto consiste en una página web que simula una plataforma de cines. Fu
 Para ver los pasos de cómo llegar al taller, sigue el enlace proporcionado a continuacion
 
 [Taller "Selección de Butacas"](./taller1.md)
+[Taller "websockets"](./taller2.md)
 
 ## Ejecución del proyecto
 Para ejecutar este proyecto, sigue los siguientes pasos:
