@@ -233,3 +233,73 @@ function InspecionarAsientos() {
     };
 }
 }
+
+function pagarAsientos(){
+    let total, moneda, metodo, infoMetodo;
+
+    total = 3;
+    moneda = 'USD';
+    
+    if(metodo === 'CREDIT_CARD' || metodo === 'DEBIT_CARD'){
+        let numeroTarjeta,fechaExp,cvv,titular;
+  
+        infoMetodo = {number:numeroTarjeta, expirationDate:fechaExp, cvv:cvv, name:titular}; 
+
+        fetch('https://cinexunidos-production.up.railway.app/payments',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                totalAmount: total,
+                currency:currency,
+                paymentMethod: metodo,
+                paymentMethodInfo: infoMetodo,
+            }),
+        })
+        .then(alert("Pago procesado con exito"))
+        .catch(error => console.error(error));
+    }
+
+    if(metodo === 'PAGO_MOVIL'){
+        let banco,correo,cedula,telefono;
+
+        infoMetodo = {email:correo, phone:telefono, ssn:cedula, bank:banco};
+
+        fetch('https://cinexunidos-production.up.railway.app/payments',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                totalAmount: total,
+                currency:currency,
+                paymentMethod: metodo,
+                paymentMethodInfo: infoMetodo,
+            }),
+        })
+        .then(alert("Pago procesado con exito"))
+        .catch(error => console.error(error));
+    }
+
+    if(metodo === 'ZELLE'){
+        let correo,telefono;
+
+        infoMetodo = {email:correo, phone:telefono};
+
+        fetch('https://cinexunidos-production.up.railway.app/payments',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                totalAmount: total,
+                currency:currency,
+                paymentMethod: metodo,
+                paymentMethodInfo: infoMetodo,
+            }),
+        })
+        .then(alert("Pago procesado con exito"))
+        .catch(error => console.error(error));
+    }
+}
