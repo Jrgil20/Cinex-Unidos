@@ -53,11 +53,13 @@ const ProcesarMessage = (payload) =>{
 
 
 // se conecta el socket un mensaje del socket
-socket.on('connect', () => {
+if(window.location.pathname.split('/Mockup/').pop() === 'funcion.html'){
+    socket.on('connect', () => {
 
-   // $usernamePic.innerHTML = `<img src="https://api.dicebear.com/9.x/initials/svg?seed=${username}" alt="${username}" />`;
-    console.log('Connected');
-});
+        // $usernamePic.innerHTML = `<img src="https://api.dicebear.com/9.x/initials/svg?seed=${username}" alt="${username}" />`;
+         console.log('Connected');
+     });
+}
 
 socket.on('disconnect', () => {
     //$onlineStatus.classList.add('hidden');
