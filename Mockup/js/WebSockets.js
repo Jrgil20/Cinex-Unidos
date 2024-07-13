@@ -49,10 +49,19 @@ const ProcesarMessage = (payload) =>{
         }
 
         if (action === 'seat-location'){
-            
 
             if (id !== socket.id) {
-                console.log(`mensaje entrante dice : ${content}`);
+                
+                const {action,seat} =content;
+                console.log(`mensaje entrante dice : ${action} y ${seat}`);
+                if(action === 'enter'){
+                    document.getElementById(seat).classList.remove('disponible');
+                    document.getElementById(seat).classList.add('mouse');
+                }else
+                if(action === 'leave'){
+                    document.getElementById(seat).classList.add('disponible');
+                    document.getElementById(seat).classList.remove('mouse');
+                }
             }
 
         }

@@ -85,8 +85,8 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                             action: 'seat-location',
                             location: localizacion,
                         };
-                        console.log(message)
-                        //socket.emit('send-message', message);
+                        //console.log(message)
+                        socket.emit('send-message', message);
                     }
                 });
 
@@ -104,8 +104,8 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                         action: 'seat-location',
                         location: localizacion,
                     };
-                    console.log(message)
-                    //socket.emit('send-message', message);
+                    //console.log(message)
+                    socket.emit('send-message', message);
                     }
                })
 

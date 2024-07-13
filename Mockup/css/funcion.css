@@ -72,6 +72,10 @@ header nav ul{
         background-image: url(../assets/asientos/seat01.png);
         }
 
+      .asiento.mouse{
+        background-image: url(../assets/asientos/seat03.png);
+      }
+
         .tooltip {
           position: absolute;
           background-color: #fff;
