@@ -89,6 +89,7 @@ header nav ul{
         }
         
         .leyenda-asientos {
+
           background-color: #eae2b7; 
           padding: 20px; 
         }
@@ -96,6 +97,7 @@ header nav ul{
         .leyenda-asientos h3 {
           font-size: 35px; 
           margin-bottom: 10px; 
+
           text-align: center;
         }
         
@@ -248,3 +250,4 @@ header nav ul{
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+

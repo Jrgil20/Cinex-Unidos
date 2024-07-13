@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
     $enviar.addEventListener("click", async () => {
+
         const token = "";
+
             $mensaje = $mensaje.value,
             $idChat = $idChat.value;
         if (!token || !$mensaje || !$idChat) {
@@ -35,7 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 recibirMensajes();
 
 function recibirMensajes(){
+
     const token = "";
+
     fetch(`https://api.telegram.org/${token}/getUpdates` )
     .then(response => response.json())
     .then(data => console.log(data));
