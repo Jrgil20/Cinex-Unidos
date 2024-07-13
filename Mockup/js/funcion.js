@@ -222,7 +222,7 @@ function pagarAsientos(){
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                total: total,
+                totalAmount: total,
                 currency:currency,
                 paymentMethod: metodo,
                 paymentMethodInfo: infoMetodo,
@@ -243,7 +243,7 @@ function pagarAsientos(){
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                total: total,
+                totalAmount: total,
                 currency:currency,
                 paymentMethod: metodo,
                 paymentMethodInfo: infoMetodo,
@@ -264,7 +264,7 @@ function pagarAsientos(){
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                total: total,
+                totalAmount: total,
                 currency:currency,
                 paymentMethod: metodo,
                 paymentMethodInfo: infoMetodo,
