@@ -48,6 +48,10 @@
                   <img src="assets/asientos/seat02.png" alt="Asiento seleccionado">
                   <span>Seleccionado</span>
                 </li>
+                <li>
+                  <img src="assets/asientos/seat03.png" alt="Asiento seleccionado por otro Usuario">
+                  <span>Seleccionado por otro Usuario</span>
+                </li>
               </ul>
             </div>
         </section>
@@ -57,6 +61,76 @@
         </section>
 
         <script src="js/funcion.js"></script>
+
+        <button id="pagar-button" class="pagar-button">Pagar</button>
+
+        <div id="modal-container" class="modal-container">
+          <div class="modal-content">
+            <div>
+              <h2>Pago</h2>
+              <span class="close">&times;</span>
+            </div>
+            
+            <div class="payment-options">
+              <input type="radio" id="tarjeta-credito" name="payment-option" value="tarjeta-credito">
+              <label for="tarjeta-credito">Tarjeta de Crédito</label>
+              <input type="radio" id="debito" name="payment-option" value="debito">
+              <label for="debito">Débito</label>
+              <input type="radio" id="pago-movil" name="payment-option" value="pago-movil">
+              <label for="pago-movil">Pago Móvil</label>
+              <input type="radio" id="zelle" name="payment-option" value="zelle">
+              <label for="zelle">Zelle</label>
+            </div>
+        
+            <form id="tarjeta-credito-form" class="tarjeta-credito-fields payment-field" style="display: none;">
+              <label for="numero-tarjeta">Número de tarjeta:</label>
+              <input type="text" id="numero-tarjeta" name="numero-tarjeta" required>
+              <br>
+              <label for="vencimiento">Vencimiento:</label>
+              <input type="text" placeholder="MM/AA" id="vencimiento" name="vencimiento" required pattern="[0-9]{2}/[0-9]{2}">
+              <br>
+              <label for="codigo-seguridad">Código de seguridad:</label>
+              <input type="text" id="codigo-seguridad" name="codigo-seguridad" required>
+              <button type="submit">Realizar pago</button>
+            </form>
+        
+            <form id="debito-form" class="debito-fields payment-field" style="display: none;">
+              <label for="numero-tarjeta">Número de tarjeta:</label>
+              <input type="text" id="numero-tarjeta" name="numero-tarjeta" required>
+              <br>
+              <label for="vencimiento">Vencimiento:</label>
+              <input type="text" placeholder="MM/AA" id="vencimiento" name="vencimiento" required pattern="[0-9]{2}/[0-9]{2}">
+              <br>
+              <label for="codigo-seguridad">Código de seguridad:</label>
+              <input type="text" id="codigo-seguridad" name="codigo-seguridad" required>
+              <button type="submit">Realizar pago</button>
+            </form>
+        
+            <form id="pago-movil-form" class="pago-movil-fields payment-field" style="display: none;">
+              <label for="email-pago-movil">Email:</label>
+              <input type="email" id="email-pago-movil" name="email-pago-movil" required>
+              <br>
+              <label for="telefono-pago-movil">Teléfono:</label>
+              <input type="tel" id="telefono-pago-movil" name="telefono-pago-movil" required>
+              <br>
+              <label for="id-persona-pago-movil">Cédula:</label>
+              <input type="text" id="id-persona-pago-movil" name="id-persona-pago-movil" required>
+              <br>
+              <label for="banco-pago-movil">Banco:</label>
+              <input type="text" id="banco-pago-movil" name="banco-pago-movil" required>
+              <button type="submit">Realizar pago</button>
+            </form>
+        
+            <form id="zelle-form" class="zelle-fields payment-field" style="display: none;">
+              <label for="email-zelle">Email:</label>
+              <input type="email" id="email-zelle" name="email-zelle" required>
+              <br>
+              <label for="telefono-zelle">Teléfono:</label>
+              <input type="tel" id="telefono-zelle" name="telefono-zelle" required>
+              <button type="submit">Realizar pago</button>
+            </form>
+          </div>
+        </div>
     </main>
 
     <script> 

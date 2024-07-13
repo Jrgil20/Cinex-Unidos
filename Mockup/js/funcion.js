@@ -313,3 +313,39 @@ function pagarAsientos(asientosSeleccionados){
         .catch(error => console.error(error));
     }
 }
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const pagarButton = document.getElementById('pagar-button');
+    const modalContainer = document.getElementById('modal-container');
+    const paymentRadios = document.getElementsByName('payment-option');
+    const paymentForms = document.querySelectorAll('form');
+    const closeButton = document.querySelector('.close');
+  
+    pagarButton.addEventListener('click', () => {
+      modalContainer.style.display = 'block';
+    });
+  
+    modalContainer.addEventListener('click', (e) => {
+      if (e.target === modalContainer) {
+        modalContainer.style.display = 'none';
+      }
+    });
+  
+    paymentRadios.forEach((radio) => {
+        radio.addEventListener('change', () => {
+          paymentForms.forEach((form) => {
+            form.style.display = 'none';
+          });
+    
+          const selectedOption = radio.value;
+          const selectedForm = document.getElementById(`${selectedOption}-form`);
+          selectedForm.style.display = 'block';
+        });
+      });
+
+      closeButton.addEventListener('click', () => {
+        const modal = document.getElementById('modal-container');
+        modal.style.display = 'none';
+      });
+  });
