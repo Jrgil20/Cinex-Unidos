@@ -1,12 +1,55 @@
-fetch('productos.json')
-    .then(response => response.json())
-    .then(data => {
-        // Aquí puedes acceder a los datos de los productos
-        console.log(data.palomitas); 
-        console.log(data.bebidas);
-        console.log(data.snacks);
+ const productos = [{
+    "palomitas": [
+        { "nombre": "Palomitas Pequeñas", "precio": 5 },
+        { "nombre": "Palomitas Medianas", "precio": 8 },
+        { "nombre": "Palomitas Grandes", "precio": 12 }
+    ],
+    "bebidas": [
+        { "nombre": "Refresco", "precio": 3 },
+        { "nombre": "Agua", "precio": 2 },
+        { "nombre": "Jugo", "precio": 4 }
+    ],
+    "snacks": [
+        { "nombre": "Chocolate", "precio": 3 },
+        { "nombre": "Papas Fritas", "precio": 4 },
+        { "nombre": "Nachos", "precio": 6 }
+    ]
+}]
 
-        // Ahora puedes usar estos datos para crear los sliders
-        // Por ejemplo, para crear elementos HTML para cada producto y agregarlos a los divs correspondientes
-    })
-    .catch(error => console.error('Error al cargar el JSON:', error));
+function createCarousel(images, title, description) {
+    const carousel = document.createElement('div');
+    carousel.classList.add('carousel');
+
+    // Add images to the carousel
+    images.forEach(image => {
+        const img = document.createElement('img');
+        img.src = image;
+        carousel.appendChild(img);
+    });
+    
+    // Add title and description to the carousel
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = title;
+    carousel.appendChild(titleElement);
+    
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = description;
+    carousel.appendChild(descriptionElement);
+    
+    return carousel;
+}
+
+function showProductosCarousel() {
+    const productosCarousel = createCarousel(productos[0].palomitas);
+    // Code to display the productos carousel on the page
+}
+
+function showBebidasCarousel() {
+    const bebidasCarousel = createCarousel(productos[0].bebidas);
+    // Code to display the bebidas carousel on the page
+}
+
+function showSnacksCarousel() {
+    const snacksCarousel = createCarousel(productos[0].snacks);
+    // Code to display the snacks carousel on the page
+}
