@@ -47,6 +47,15 @@ const ProcesarMessage = (payload) =>{
 
             chatMessages.appendChild(chatMessage);
         }
+
+        if (action === 'seat-location'){
+            
+
+            if (id !== socket.id) {
+                console.log(`mensaje entrante dice : ${content}`);
+            }
+
+        }
     }
 }
 

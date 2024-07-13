@@ -88,7 +88,6 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                         console.log(message)
                         //socket.emit('send-message', message);
                     }
-                        console.log(mensaje)
                 });
 
                 asiento.addEventListener('mouseleave',() => {
