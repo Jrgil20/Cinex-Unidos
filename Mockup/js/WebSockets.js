@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // recibimos un mensaje del socket
 const ProcesarMessage = (payload) =>{
-    console.log(payload);
+    //console.log(payload);
     const { id, message, name } = payload;
-    console.log(` id: ${id} de nombre ${name} manda el mensaje ${message}`);
+    //console.log(` id: ${id} de nombre ${name} manda el mensaje ${message}`);
     const { content,action} = message;
-    console.log(` el mensaje es un ${action} `);
+    //console.log(` el mensaje es un ${action} `);
     if (action === 'chat-message'){
         const chatMessage = document.createElement('div');
         chatMessage.classList.add('chat-message');
