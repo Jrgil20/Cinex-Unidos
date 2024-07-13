@@ -71,15 +71,44 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                 tooltip.style.display = 'none';
                 });
 
-                 asiento.addEventListener('mouseenter',() => {
+                asiento.addEventListener('mouseenter',() => {
                      if(asiento.classList.contains('disponible')){
                         let movieName = document.getElementById('nombrePelicula').textContent
 
-                        const mensaje = `Usuario en el asiento ${asiento.id} en el cine ${id}, en la sala ${idAuditorio} en el horario ${idFuncion} de la pelicula ${movieName}`;
+                        const mensaje ={
+                            seat : asiento.id,
+                            action :'enter'
+                        };
 
+                        message= {
+                            content: mensaje,
+                            action: 'seat-location',
+                            location: localizacion,
+                        };
+                        console.log(message)
+                        //socket.emit('send-message', message);
+                    }
                         console.log(mensaje)
-                     }
-                })
+                });
+
+                asiento.addEventListener('mouseleave',() => {
+                    if(asiento.classList.contains('disponible')){
+                       let movieName = document.getElementById('nombrePelicula').textContent
+
+                       const mensaje ={
+                        seat : asiento.id,
+                        action :'leave'
+                    };
+
+                    message= {
+                        content: mensaje,
+                        action: 'seat-location',
+                        location: localizacion,
+                    };
+                    console.log(message)
+                    //socket.emit('send-message', message);
+                    }
+               })
 
                 // Agrega el tooltip al asiento
                 asiento.appendChild(tooltip);  
