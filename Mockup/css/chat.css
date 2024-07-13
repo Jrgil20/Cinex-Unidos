@@ -22,6 +22,26 @@
     border-radius: 5px;
 }
 
+.chat-message{
+    padding: 10px;
+    width: fit-content;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    float: right;
+}
+
+
+.incoming{
+    padding: 10px;
+    width: fit-content;
+    margin-bottom: 10px;
+    background-color: #1f1060;
+    border-radius: 5px;
+    color: #fff;
+    float: left;
+}
+
 .chat-input {
     padding: 10px;
     border-top: 1px solid #ccc;

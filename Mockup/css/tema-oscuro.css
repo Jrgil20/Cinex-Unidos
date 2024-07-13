@@ -43,6 +43,10 @@ header {
   .chat-window .chat-messages{
     background-color: #888;
   }
+
+  .chat-message{
+    color: #000;
+  }
   .chat-window .chat-header {
     padding: 10px;
     background-color: #f77f00;
