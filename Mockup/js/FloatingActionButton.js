@@ -26,6 +26,7 @@ floatingMenuIcon.addEventListener('click', () => {
         floatingMenuIcon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
         floatingMenuIcon2.classList.remove('oculto');
         floatingMenuIcon3.classList.remove('oculto');
+        document.getElementById('socket').src ='js/WebSockets.js';
     } else {
         floatingMenuIcon.innerHTML = '<i class="fa-solid fa-plus"></i>';
         floatingMenuIcon2.classList.add('oculto');
