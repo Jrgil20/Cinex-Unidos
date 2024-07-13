@@ -71,6 +71,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                 tooltip.style.display = 'none';
                 });
 
+
                 asiento.addEventListener('mouseenter',() => {
                      if(asiento.classList.contains('disponible')){
                         let movieName = document.getElementById('nombrePelicula').textContent
@@ -108,6 +109,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                     socket.emit('send-message', message);
                     }
                })
+
 
                 // Agrega el tooltip al asiento
                 asiento.appendChild(tooltip);  

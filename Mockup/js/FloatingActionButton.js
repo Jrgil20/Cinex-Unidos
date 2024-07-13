@@ -60,9 +60,11 @@ const floatingModalForm = document.createElement('form');
 floatingModalForm.classList.add('modal-form');
 floatingModalContent.appendChild(floatingModalForm);
 
+
 const floatingModalTitle = document.createElement('h2');
 floatingModalTitle.textContent = 'Preferencias';
 floatingModalForm.appendChild(floatingModalTitle);
+
 
 const floatingModalCheckbox = document.createElement('input');
 floatingModalCheckbox.type = 'checkbox';
@@ -123,7 +125,9 @@ floatingModalSwitchInput.addEventListener('change', () => {
     location.reload();
 });
 
+
 /* se deberia crear una funcion crear modal flotante */
+
 /* Floating Modal 2 */
 const floatingModal2 = document.createElement('div');
 floatingModal2.classList.add('modal');
@@ -138,6 +142,7 @@ const floatingModalClose2 = document.createElement('span');
 floatingModalClose2.classList.add('close');
 floatingModalClose2.innerHTML = '&times;';
 floatingModalContent2.appendChild(floatingModalClose2);
+
 
 const chatWindow = document.createElement('div');
 chatWindow.classList.add('chat-window');
@@ -164,6 +169,7 @@ chatSendButton.setAttribute('id','sendButton');
 chatSendButton.textContent = 'Enviar Mensaje';
 chatWindow.appendChild(chatSendButton);
 
+
 floatingMenuIcon3.addEventListener('click', () => {
     floatingModal2.style.display = 'inline-block';
 });
@@ -171,9 +177,6 @@ floatingMenuIcon3.addEventListener('click', () => {
 floatingModalClose2.onclick = function () {
     floatingModal2.style.display = 'none';
 }
-
-
-
 
 
 window.onclick = function (event) {

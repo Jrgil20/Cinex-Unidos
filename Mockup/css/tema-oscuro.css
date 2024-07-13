@@ -32,10 +32,13 @@ header {
   }
 
   .modal-content {     
+
     background-color: #07023d;        
+
     border: 1px solid #888;  
     color: #fff;      
   }
+
 
   .chat-window{
     background-color: #888;
@@ -58,6 +61,7 @@ header {
   color: #fff;  
 }
 
+
   .slider {    
     background-color: white;
 }
@@ -77,8 +81,9 @@ footer {
 .tooltip {
   background-color: #000000;
   border: 1px solid #ddd;
-}
+
 
 .leyenda-asientos{
   background-color: #0c0414;
+
 }

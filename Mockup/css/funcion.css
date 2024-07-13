@@ -60,7 +60,9 @@ header nav ul{
        
       }
       .asiento.selecionado:hover {
+
         transform: scale(1.1);
+
         
        }
 
@@ -70,6 +72,7 @@ header nav ul{
   
       .asiento.disponible {
         background-image: url(../assets/asientos/seat01.png);
+
         }
 
       .asiento.mouse{
@@ -118,3 +121,4 @@ header nav ul{
           font-size: 16px; /* tamaño del texto */
           font-weight: bold; /* texto en negrita */
         }
+
