@@ -83,6 +83,8 @@
             </div>
         
             <form id="tarjeta-credito-form" class="tarjeta-credito-fields payment-field" style="display: none;">
+              <label for="nombre-tarjeta">Nombre en la tarjeta:</label>
+              <input type="text" id="nombre-tarjeta" name="nombre-tarjeta" required>
               <label for="numero-tarjeta">Número de tarjeta:</label>
               <input type="text" id="numero-tarjeta" name="numero-tarjeta" required>
               <br>
@@ -95,14 +97,16 @@
             </form>
         
             <form id="debito-form" class="debito-fields payment-field" style="display: none;">
-              <label for="numero-tarjeta">Número de tarjeta:</label>
-              <input type="text" id="numero-tarjeta" name="numero-tarjeta" required>
+              <label for="nombre-tarjeta-debito">Nombre en la tarjeta:</label>
+              <input type="text" id="nombre-tarjeta-debito" name="nombre-tarjeta-debito" required>
+              <label for="numero-tarjeta-debito">Número de tarjeta:</label>
+              <input type="text" id="numero-tarjeta-debito" name="numero-tarjeta-debito" required>
               <br>
-              <label for="vencimiento">Vencimiento:</label>
-              <input type="text" placeholder="MM/AA" id="vencimiento" name="vencimiento" required pattern="[0-9]{2}/[0-9]{2}">
+              <label for="vencimiento-debito">Vencimiento:</label>
+              <input type="text" placeholder="MM/AA" id="vencimiento-debito" name="vencimiento-debito" required pattern="[0-9]{2}/[0-9]{2}">
               <br>
-              <label for="codigo-seguridad">Código de seguridad:</label>
-              <input type="text" id="codigo-seguridad" name="codigo-seguridad" required>
+              <label for="codigo-seguridad-debito">Código de seguridad:</label>
+              <input type="text" id="codigo-seguridad-debito" name="codigo-seguridad-debito" required>
               <button type="submit">Realizar pago</button>
             </form>
         

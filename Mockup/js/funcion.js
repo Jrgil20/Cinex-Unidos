@@ -244,8 +244,70 @@ function InspecionarAsientos() {
 }
 }
 
+const tarjetaForm = document.getElementById('tarjeta-credito-form');
+
+tarjetaForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    // Extract form data
+    const numeroTarjeta = document.getElementById('numero-tarjeta').value;
+    const vencimiento = document.getElementById('vencimiento').value;
+    const codigoSeguridad = document.getElementById('codigo-seguridad').value;
+    const titular = document.getElementById('nombre-tarjeta').value;
+
+    const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular}; 
+    // Reset form fields
+    tarjetaForm.reset();
+});
+
+const debitform = document.getElementById('debit-card-form');
+
+debitform.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    // Extract form data
+    const numeroTarjeta = document.getElementById('numero-tarjeta-debito').value;
+    const vencimiento = document.getElementById('vencimiento-debito').value;
+    const codigoSeguridad = document.getElementById('codigo-seguridad-debito').value;
+    const titular = document.getElementById('nombre-tarjeta-debito').value;
+
+    const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular};
+    // Reset form fields
+    debitform.reset();
+});
+
+const pagoMovilForm = document.getElementById('pago-movil-form');
+
+pagoMovilForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    // Extract form data
+    const banco = document.getElementById('banco').value;
+    const correo = document.getElementById('correo').value;
+    const cedula = document.getElementById('cedula').value;
+    const telefono = document.getElementById('telefono').value;
+
+    const infoMetodo = {email:correo, phone:telefono, ssn:cedula, bank:banco};
+    // Reset form fields
+    pagoMovilForm.reset();
+
+});
+
+const zelleForm = document.getElementById('zelle-form');
+
+zelleForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    // Extract form data
+    const correo = document.getElementById('correo-zelle').value;
+    const telefono = document.getElementById('telefono-zelle').value;
+    
+    const infoMetodo = {email:correo, phone:telefono};
+    // Reset form fields
+    zelleForm.reset();
+});
+
 function pagarAsientos(asientosSeleccionados){
-    let total, moneda, metodo, infoMetodo;
 
     total = asientosSeleccionados.length*1.2;
     moneda = 'USD';
