@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             
             chatInput.value = '';
 
-            console.log(mensaje)
             const message= {
                 content: mensaje,
                 action: 'chat-message',
+                location: localizacion,
             }
+            console.log(message)
             socket.emit('send-message', message);
         }
     });
@@ -30,22 +31,23 @@ const ProcesarMessage = (payload) =>{
     //console.log(payload);
     const { id, message, name } = payload;
     //console.log(` id: ${id} de nombre ${name} manda el mensaje ${message}`);
-    const { content,action} = message;
-    //console.log(` el mensaje es un ${action} `);
-    if (action === 'chat-message'){
-        const chatMessage = document.createElement('div');
-        chatMessage.classList.add('chat-message');
-        chatMessage.textContent = content;
-        
+    const { content,action,location} = message;
+    console.log(` el mensaje es un ${action} mandado desde ${location}`);
+    if (location === localizacion){
+        if (action === 'chat-message'){
+            const chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.textContent = content;
+            
 
-        if (id !== socket.id) {
-            console.log(`mensaje entrante dice : ${content}`);
-            chatMessage.classList.add('incoming');
+            if (id !== socket.id) {
+                console.log(`mensaje entrante dice : ${content}`);
+                chatMessage.classList.add('incoming');
+            }
+
+            chatMessages.appendChild(chatMessage);
         }
-
-        chatMessages.appendChild(chatMessage);
     }
-
 }
 
 
