@@ -12,6 +12,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
     const informacionfuncion = document.getElementById('informacion-container');
     const pelicula = document.createElement('h2');
     pelicula.textContent = data.movie.name;
+    pelicula.setAttribute('id','nombrePelicula');
     informacionfuncion.appendChild(pelicula);
 
     const poster = document.createElement('img');
@@ -22,6 +23,7 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
 
     const horario = document.createElement('p');
     horario.textContent = data.startTime;
+    horario.setAttribute('id','horarioEmpieza');
     informacionfuncion.appendChild(horario);
 
     const rating = document.createElement('p');
@@ -68,6 +70,46 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
                 asiento.addEventListener('mouseout', () => {
                 tooltip.style.display = 'none';
                 });
+
+
+                asiento.addEventListener('mouseenter',() => {
+                     if(asiento.classList.contains('disponible')){
+                        let movieName = document.getElementById('nombrePelicula').textContent
+
+                        const mensaje ={
+                            seat : asiento.id,
+                            action :'enter'
+                        };
+
+                        message= {
+                            content: mensaje,
+                            action: 'seat-location',
+                            location: localizacion,
+                        };
+                        //console.log(message)
+                        socket.emit('send-message', message);
+                    }
+                });
+
+                asiento.addEventListener('mouseleave',() => {
+                    if(asiento.classList.contains('disponible')){
+                       let movieName = document.getElementById('nombrePelicula').textContent
+
+                       const mensaje ={
+                        seat : asiento.id,
+                        action :'leave'
+                    };
+
+                    message= {
+                        content: mensaje,
+                        action: 'seat-location',
+                        location: localizacion,
+                    };
+                    //console.log(message)
+                    socket.emit('send-message', message);
+                    }
+               })
+
 
                 // Agrega el tooltip al asiento
                 asiento.appendChild(tooltip);  
@@ -191,4 +233,74 @@ function InspecionarAsientos() {
         console.error('EventSource failed:', error);
     };
 }
+}
+
+function pagarAsientos(){
+    let total, moneda, metodo, infoMetodo;
+
+    total = 3;
+    moneda = 'USD';
+    
+    if(metodo === 'CREDIT_CARD' || metodo === 'DEBIT_CARD'){
+        let numeroTarjeta,fechaExp,cvv,titular;
+  
+        infoMetodo = {number:numeroTarjeta, expirationDate:fechaExp, cvv:cvv, name:titular}; 
+
+        fetch('https://cinexunidos-production.up.railway.app/payments',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                totalAmount: total,
+                currency:currency,
+                paymentMethod: metodo,
+                paymentMethodInfo: infoMetodo,
+            }),
+        })
+        .then(alert("Pago procesado con exito"))
+        .catch(error => console.error(error));
+    }
+
+    if(metodo === 'PAGO_MOVIL'){
+        let banco,correo,cedula,telefono;
+
+        infoMetodo = {email:correo, phone:telefono, ssn:cedula, bank:banco};
+
+        fetch('https://cinexunidos-production.up.railway.app/payments',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                totalAmount: total,
+                currency:currency,
+                paymentMethod: metodo,
+                paymentMethodInfo: infoMetodo,
+            }),
+        })
+        .then(alert("Pago procesado con exito"))
+        .catch(error => console.error(error));
+    }
+
+    if(metodo === 'ZELLE'){
+        let correo,telefono;
+
+        infoMetodo = {email:correo, phone:telefono};
+
+        fetch('https://cinexunidos-production.up.railway.app/payments',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                totalAmount: total,
+                currency:currency,
+                paymentMethod: metodo,
+                paymentMethodInfo: infoMetodo,
+            }),
+        })
+        .then(alert("Pago procesado con exito"))
+        .catch(error => console.error(error));
+    }
 }

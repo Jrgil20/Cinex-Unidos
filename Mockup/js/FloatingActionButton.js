@@ -60,6 +60,12 @@ const floatingModalForm = document.createElement('form');
 floatingModalForm.classList.add('modal-form');
 floatingModalContent.appendChild(floatingModalForm);
 
+
+const floatingModalTitle = document.createElement('h2');
+floatingModalTitle.textContent = 'Preferencias';
+floatingModalForm.appendChild(floatingModalTitle);
+
+
 const floatingModalCheckbox = document.createElement('input');
 floatingModalCheckbox.type = 'checkbox';
 floatingModalCheckbox.id = 'checkbox';
@@ -119,6 +125,9 @@ floatingModalSwitchInput.addEventListener('change', () => {
     location.reload();
 });
 
+
+/* se deberia crear una funcion crear modal flotante */
+
 /* Floating Modal 2 */
 const floatingModal2 = document.createElement('div');
 floatingModal2.classList.add('modal');
@@ -134,6 +143,33 @@ floatingModalClose2.classList.add('close');
 floatingModalClose2.innerHTML = '&times;';
 floatingModalContent2.appendChild(floatingModalClose2);
 
+
+const chatWindow = document.createElement('div');
+chatWindow.classList.add('chat-window');
+chatWindow.setAttribute('id','ventanaChat');
+floatingModalContent2.appendChild(chatWindow);
+
+const chatHeader = document.createElement('div');
+chatHeader.classList.add('chat-header');
+chatHeader.textContent = 'Chat con Soporte Tecnico';
+chatWindow.appendChild(chatHeader);
+
+const chatMessages = document.createElement('div');
+chatMessages.classList.add('chat-messages');
+chatWindow.appendChild(chatMessages);
+
+const chatInput = document.createElement('input');
+chatInput.classList.add('chat-input');
+chatInput.placeholder = 'Escribe tu Mensaje...';
+chatWindow.appendChild(chatInput);
+
+const chatSendButton = document.createElement('button');
+chatSendButton.classList.add('chat-send-button');
+chatSendButton.setAttribute('id','sendButton');
+chatSendButton.textContent = 'Enviar Mensaje';
+chatWindow.appendChild(chatSendButton);
+
+
 floatingMenuIcon3.addEventListener('click', () => {
     floatingModal2.style.display = 'inline-block';
 });
@@ -141,6 +177,7 @@ floatingMenuIcon3.addEventListener('click', () => {
 floatingModalClose2.onclick = function () {
     floatingModal2.style.display = 'none';
 }
+
 
 window.onclick = function (event) {
 

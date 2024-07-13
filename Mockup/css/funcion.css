@@ -60,8 +60,9 @@ header nav ul{
        
       }
       .asiento.selecionado:hover {
-        width: 35px;
-        height: 40px;
+
+        transform: scale(1.1);
+
         
        }
 
@@ -71,7 +72,12 @@ header nav ul{
   
       .asiento.disponible {
         background-image: url(../assets/asientos/seat01.png);
+
         }
+
+      .asiento.mouse{
+        background-image: url(../assets/asientos/seat03.png);
+      }
 
         .tooltip {
           position: absolute;
@@ -82,3 +88,37 @@ header nav ul{
           z-index: 1;
         }
         
+        .leyenda-asientos {
+          background-color: #eae2b7; /* fondo claro */
+          padding: 20px; /* espacio entre el contenido y el borde */
+        }
+
+        .leyenda-asientos h3 {
+          font-size: 35px; /* tamaño del título */
+          margin-bottom: 10px; /* espacio entre el título y la lista */
+          text-align: center;
+        }
+        
+        .leyenda-asientos ul {
+          list-style: none; /* quita los puntos de la lista */
+          margin: 0; /* quita el margen superior */
+          padding: 0; /* quita el padding superior */
+          display: flex; /* hace que los elementos se muestren en fila */
+          justify-content: space-between; /* distribuye los elementos de manera uniforme */
+        }
+        
+        .leyenda-asientos li {
+          margin-right: 20px; /* espacio entre los elementos */
+        }
+        
+        .leyenda-asientos img {
+          width: 40px; /* ancho de las imágenes */
+          height: 40px; /* alto de las imágenes */
+          margin-right: 10px; /* espacio entre la imagen y el texto */
+        }
+        
+        .leyenda-asientos span {
+          font-size: 16px; /* tamaño del texto */
+          font-weight: bold; /* texto en negrita */
+        }
+
