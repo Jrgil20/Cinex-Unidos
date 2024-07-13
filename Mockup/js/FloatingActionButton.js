@@ -60,6 +60,10 @@ const floatingModalForm = document.createElement('form');
 floatingModalForm.classList.add('modal-form');
 floatingModalContent.appendChild(floatingModalForm);
 
+const floatingModalTitle = document.createElement('h2');
+floatingModalTitle.textContent = 'Preferencias';
+floatingModalForm.appendChild(floatingModalTitle);
+
 const floatingModalCheckbox = document.createElement('input');
 floatingModalCheckbox.type = 'checkbox';
 floatingModalCheckbox.id = 'checkbox';
@@ -142,7 +146,7 @@ floatingModalContent2.appendChild(chatWindow);
 
 const chatHeader = document.createElement('div');
 chatHeader.classList.add('chat-header');
-chatHeader.textContent = 'Chat Window';
+chatHeader.textContent = 'Chat con Soporte Tecnico';
 chatWindow.appendChild(chatHeader);
 
 const chatMessages = document.createElement('div');
@@ -151,13 +155,13 @@ chatWindow.appendChild(chatMessages);
 
 const chatInput = document.createElement('input');
 chatInput.classList.add('chat-input');
-chatInput.placeholder = 'Type your message...';
+chatInput.placeholder = 'Escribe tu Mensaje...';
 chatWindow.appendChild(chatInput);
 
 const chatSendButton = document.createElement('button');
 chatSendButton.classList.add('chat-send-button');
 chatSendButton.setAttribute('id','sendButton');
-chatSendButton.textContent = 'Send';
+chatSendButton.textContent = 'Enviar Mensaje';
 chatWindow.appendChild(chatSendButton);
 
 floatingMenuIcon3.addEventListener('click', () => {

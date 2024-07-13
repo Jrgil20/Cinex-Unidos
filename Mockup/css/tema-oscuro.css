@@ -32,10 +32,27 @@ header {
   }
 
   .modal-content {     
-    background-color: #412485;        
+    background-color: #07023d;        
     border: 1px solid #888;  
     color: #fff;      
   }
+
+  .chat-window{
+    background-color: #888;
+  }
+  .chat-window .chat-messages{
+    background-color: #888;
+  }
+  .chat-window .chat-header {
+    padding: 10px;
+    background-color: #f77f00;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+.chat-send-button{
+  background-color: #003049;
+  color: #fff;  
+}
 
   .slider {    
     background-color: white;
@@ -56,4 +73,8 @@ footer {
 .tooltip {
   background-color: #000000;
   border: 1px solid #ddd;
+}
+
+.leyenda-asientos{
+  background-color: #0c0414;
 }

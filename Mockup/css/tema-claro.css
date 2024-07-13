@@ -45,6 +45,17 @@ header {
     .close:hover, .close:focus {
         color: black;
     }
+
+    .chat-window .chat-header {
+      padding: 10px;
+      background-color: #f77f00;
+      border-bottom: 1px solid #ccc;
+      font-weight: bold;
+  }
+  .chat-send-button{
+    background-color: #003049;
+    color: #fff;  
+}
 /* Estilo para el slider */
 
 .slider {    

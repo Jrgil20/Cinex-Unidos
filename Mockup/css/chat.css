@@ -1,15 +1,16 @@
 /* Chat window styles */
 .chat-window {
-    width: 300px;
+    width: 90%;
     height: 400px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .chat-window .chat-header {
     padding: 10px;
-    background-color: #f2f2f2;
+    background-color: #f77f00;
     border-bottom: 1px solid #ccc;
     font-weight: bold;
 }
@@ -17,7 +18,7 @@
 .chat-messages {
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #fff;
+    background-color: #eee;
     border-radius: 5px;
 }
 
@@ -28,7 +29,7 @@
 
 .chat-send-button{
     padding: 10px;
-    background-color: #333;
+    background-color: #003049;
     color: #fff;
     border: none;
     border-radius: 5px;

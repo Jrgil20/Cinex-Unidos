@@ -12,7 +12,7 @@
   .modal-content {       
     margin: 15% auto;    
     padding: 20px;      
-    width: 80%;     
+    width: 50%;     
   }
 
   .close {     
@@ -24,4 +24,47 @@
     .close:hover, .close:focus {
         text-decoration: none; 
         cursor: pointer;   
+    }
+
+    .chat-window {
+      display: flex;
+      flex-direction: column;
+      height: 100%; /* Establece la altura del div para que cubra todo el espacio disponible */
+      width: 90%;
+
+    }
+    
+    .chat-header {
+      background-color: #000000;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .chat-messages {
+      flex: 1; /* Ocupa todo el espacio disponible */
+      overflow-y: auto; /* Agrega un scroll vertical para mostrar los mensajes */
+      padding: 10px;
+    }
+    
+    .chat-input {
+      margin-top: auto; /* Posiciona el input de texto en la parte más baja del div */
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+    }
+    
+    .chat-send-button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    .chat-send-button:hover {
+      background-color: #3e8e41;
     }
