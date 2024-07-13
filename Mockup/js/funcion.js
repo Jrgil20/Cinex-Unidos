@@ -173,8 +173,12 @@ fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/
 
 window.onload = InspecionarAsientos();
 
+const asientosSeleccionados = [];
+
 function ReservarAsientos(asiento) {
     console.log('reservando asiento',asiento);
+    asientosSeleccionados.push(asiento); // Agregar asiento a la lista de asientos seleccionados
+
     fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/${idAuditorio}/showtimes/${idFuncion}/reserve`, {
         method: 'POST',
         headers: {
@@ -195,6 +199,11 @@ function ReservarAsientos(asiento) {
 
 function LiberarAsientos(asiento) {
     console.log('Liberando asiento: ', asiento);
+    const index = asientosSeleccionados.indexOf(asiento);
+    if (index > -1) {
+        asientosSeleccionados.splice(index, 1); // Eliminar asiento de la lista de asientos seleccionados
+    }
+
     fetch(`https://cinexunidos-production.up.railway.app/theatres/${id}/auditoriums/${idAuditorio}/showtimes/${idFuncion}/reserve`, {
         method: 'DELETE',
         headers: {
@@ -235,10 +244,10 @@ function InspecionarAsientos() {
 }
 }
 
-function pagarAsientos(){
+function pagarAsientos(asientosSeleccionados){
     let total, moneda, metodo, infoMetodo;
 
-    total = 3;
+    total = asientosSeleccionados.length*1.2;
     moneda = 'USD';
     
     if(metodo === 'CREDIT_CARD' || metodo === 'DEBIT_CARD'){

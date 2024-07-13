@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
     $enviar.addEventListener("click", async () => {
-        const token = "7025818187:AAEeqTh-5wpC8Hj6Tsqqd-IPvCguh9JJqLw";
+        const token = "";
             $mensaje = $mensaje.value,
             $idChat = $idChat.value;
         if (!token || !$mensaje || !$idChat) {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 recibirMensajes();
 
 function recibirMensajes(){
-    const token = "7025818187:AAEeqTh-5wpC8Hj6Tsqqd-IPvCguh9JJqLw";
+    const token = "";
     fetch(`https://api.telegram.org/${token}/getUpdates` )
     .then(response => response.json())
     .then(data => console.log(data));
