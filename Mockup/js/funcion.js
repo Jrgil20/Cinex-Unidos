@@ -258,6 +258,8 @@ tarjetaForm.addEventListener('submit', (event) => {
     const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular}; 
     // Reset form fields
     tarjetaForm.reset();
+
+    pagarAsientos(asientosSeleccionados,'CREDIT_CARD',infoMetodo);
 });
 
 const debitform = document.getElementById('debit-card-form');
@@ -274,6 +276,8 @@ debitform.addEventListener('submit', (event) => {
     const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular};
     // Reset form fields
     debitform.reset();
+
+    pagarAsientos(asientosSeleccionados,'DEBIT_CARD',infoMetodo);
 });
 
 const pagoMovilForm = document.getElementById('pago-movil-form');
@@ -291,6 +295,8 @@ pagoMovilForm.addEventListener('submit', (event) => {
     // Reset form fields
     pagoMovilForm.reset();
 
+    pagarAsientos(asientosSeleccionados,'PAGO_MOVIL',infoMetodo);
+
 });
 
 const zelleForm = document.getElementById('zelle-form');
@@ -305,6 +311,8 @@ zelleForm.addEventListener('submit', (event) => {
     const infoMetodo = {email:correo, phone:telefono};
     // Reset form fields
     zelleForm.reset();
+
+    pagarAsientos(asientosSeleccionados,'ZELLE',infoMetodo);
 });
 
 function pagarAsientos(asientosSeleccionados){
