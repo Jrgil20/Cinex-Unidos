@@ -61,11 +61,31 @@ const floatingModalForm = document.createElement('form');
 floatingModalForm.classList.add('modal-form');
 floatingModalContent.appendChild(floatingModalForm);
 
-
 const floatingModalTitle = document.createElement('h2');
 floatingModalTitle.textContent = 'Preferencias';
 floatingModalForm.appendChild(floatingModalTitle);
 
+const modalForm = document.querySelector('.modal-content'); 
+const userNameLabel = document.createElement('h5');
+userNameLabel.textContent = 'Nombre de Usuario';
+userNameLabel.style.marginBottom = '10px';
+modalForm.appendChild(userNameLabel);
+
+const userNameInput = document.createElement('input');
+userNameInput.classList.add('user-name-input');
+userNameInput.placeholder = 'Tu nombre';
+userNameInput.setAttribute('required', true);
+modalForm.appendChild(userNameInput); 
+
+const saveButton = document.createElement('button');
+saveButton.type = 'submit';
+saveButton.textContent = 'Guardar Preferencias';
+saveButton.classList.add('save-button');
+modalForm.appendChild(saveButton);
+
+saveButton.addEventListener('click', function() {
+    console.log('Guardar preferencias...');
+  });
 
 const floatingModalCheckbox = document.createElement('input');
 floatingModalCheckbox.type = 'checkbox';
@@ -163,12 +183,6 @@ const chatInput = document.createElement('input');
 chatInput.classList.add('chat-input');
 chatInput.placeholder = 'Escribe tu Mensaje...';
 chatWindow.appendChild(chatInput);
-
-const userNameInput = document.createElement('input');
-userNameInput.classList.add('user-name-input');
-userNameInput.placeholder = 'Tu nombre';
-userNameInput.setAttribute('required', true);
-chatWindow.appendChild(userNameInput);
 
 const chatSendButton = document.createElement('button');
 chatSendButton.classList.add('chat-send-button');

@@ -54,17 +54,18 @@
       width: 100%;
     }
     
-    .chat-send-button {
+    .chat-send-button, .save-button {
       margin-top: 10px;
       padding: 10px;
       border: none;
       border-radius: 10px;
-      width: 100%;
+      width: fit-content;
       background-color: #4CAF50;
       color: #fff;
       cursor: pointer;
+      
     }
     
-    .chat-send-button:hover {
+    .chat-send-button:hover, .save-button:hover {
       background-color: #3e8e41;
     }
