@@ -347,7 +347,6 @@ function pagarAsientos(asientosSeleccionados,metodo,infoMetodo){
     
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
     const pagarButton = document.getElementById('pagar-button');
     const modalContainer = document.getElementById('modal-container');
