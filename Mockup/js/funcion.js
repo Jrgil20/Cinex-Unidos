@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-const debitform = document.getElementById('debit-card-form');
+const debitform = document.getElementById('debito-form');
 
 document.addEventListener('DOMContentLoaded', function() {
     debitform.addEventListener('submit', (event) => {
@@ -337,12 +337,18 @@ function pagarAsientos(asientosSeleccionados,metodo,infoMetodo){
         },
         body: JSON.stringify({
             totalAmount: total,
-            currency:currency,
+            currency:moneda,
             paymentMethod: metodo,
             paymentMethodInfo: infoMetodo,
         }),
     })
-    .then(alert("Pago procesado con exito"))
+    .then(response => {
+         if(response.status === 201){
+            alert('Pago procesado con exito');
+         }else{
+            alert('Error del servidor');
+         }
+    })
     .catch(error => console.error(error));
     
 }
