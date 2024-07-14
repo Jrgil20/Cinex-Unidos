@@ -246,73 +246,82 @@ function InspecionarAsientos() {
 
 const tarjetaForm = document.getElementById('tarjeta-credito-form');
 
-tarjetaForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission
+document.addEventListener('DOMContentLoaded', function() {
 
-    // Extract form data
-    const numeroTarjeta = document.getElementById('numero-tarjeta').value;
-    const vencimiento = document.getElementById('vencimiento').value;
-    const codigoSeguridad = document.getElementById('codigo-seguridad').value;
-    const titular = document.getElementById('nombre-tarjeta').value;
+    tarjetaForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
 
-    const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular}; 
-    // Reset form fields
-    tarjetaForm.reset();
+        // Extract form data
+        const numeroTarjeta = document.getElementById('numero-tarjeta').value;
+        const vencimiento = document.getElementById('vencimiento').value;
+        const codigoSeguridad = document.getElementById('codigo-seguridad').value;
+        const titular = document.getElementById('nombre-tarjeta').value;
 
-    pagarAsientos(asientosSeleccionados,'CREDIT_CARD',infoMetodo);
+        const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular}; 
+        // Reset form fields
+        tarjetaForm.reset();
+
+        pagarAsientos(asientosSeleccionados,'CREDIT_CARD',infoMetodo);
+    });
+
 });
 
 const debitform = document.getElementById('debit-card-form');
 
-debitform.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission
+document.addEventListener('DOMContentLoaded', function() {
+    debitform.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
 
-    // Extract form data
-    const numeroTarjeta = document.getElementById('numero-tarjeta-debito').value;
-    const vencimiento = document.getElementById('vencimiento-debito').value;
-    const codigoSeguridad = document.getElementById('codigo-seguridad-debito').value;
-    const titular = document.getElementById('nombre-tarjeta-debito').value;
+        // Extract form data
+        const numeroTarjeta = document.getElementById('numero-tarjeta-debito').value;
+        const vencimiento = document.getElementById('vencimiento-debito').value;
+        const codigoSeguridad = document.getElementById('codigo-seguridad-debito').value;
+        const titular = document.getElementById('nombre-tarjeta-debito').value;
 
-    const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular};
-    // Reset form fields
-    debitform.reset();
+        const infoMetodo = {number:numeroTarjeta, expirationDate: vencimiento, cvv:codigoSeguridad, name:titular};
+        // Reset form fields
+        debitform.reset();
 
-    pagarAsientos(asientosSeleccionados,'DEBIT_CARD',infoMetodo);
+        pagarAsientos(asientosSeleccionados,'DEBIT_CARD',infoMetodo);
+    });
 });
 
 const pagoMovilForm = document.getElementById('pago-movil-form');
+document.addEventListener('DOMContentLoaded', function() {
+    pagoMovilForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
 
-pagoMovilForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission
+        // Extract form data
+        const banco = document.getElementById('banco').value;
+        const correo = document.getElementById('correo').value;
+        const cedula = document.getElementById('cedula').value;
+        const telefono = document.getElementById('telefono').value;
 
-    // Extract form data
-    const banco = document.getElementById('banco').value;
-    const correo = document.getElementById('correo').value;
-    const cedula = document.getElementById('cedula').value;
-    const telefono = document.getElementById('telefono').value;
+        const infoMetodo = {email:correo, phone:telefono, ssn:cedula, bank:banco};
+        // Reset form fields
+        pagoMovilForm.reset();
 
-    const infoMetodo = {email:correo, phone:telefono, ssn:cedula, bank:banco};
-    // Reset form fields
-    pagoMovilForm.reset();
+        pagarAsientos(asientosSeleccionados,'PAGO_MOVIL',infoMetodo);
 
-    pagarAsientos(asientosSeleccionados,'PAGO_MOVIL',infoMetodo);
-
+    });
 });
 
 const zelleForm = document.getElementById('zelle-form');
 
-zelleForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission
+document.addEventListener('DOMContentLoaded', function() {
+    zelleForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
 
-    // Extract form data
-    const correo = document.getElementById('correo-zelle').value;
-    const telefono = document.getElementById('telefono-zelle').value;
-    
-    const infoMetodo = {email:correo, phone:telefono};
-    // Reset form fields
-    zelleForm.reset();
+        // Extract form data
+        const correo = document.getElementById('correo-zelle').value;
+        const telefono = document.getElementById('telefono-zelle').value;
+        
+        const infoMetodo = {email:correo, phone:telefono};
+        // Reset form fields
+        zelleForm.reset();
 
-    pagarAsientos(asientosSeleccionados,'ZELLE',infoMetodo);
+        pagarAsientos(asientosSeleccionados,'ZELLE',infoMetodo);
+    });
 });
 
 function pagarAsientos(asientosSeleccionados,metodo,infoMetodo){
@@ -337,7 +346,6 @@ function pagarAsientos(asientosSeleccionados,metodo,infoMetodo){
     .catch(error => console.error(error));
     
 }
-
 
 window.addEventListener('DOMContentLoaded', () => {
     const pagarButton = document.getElementById('pagar-button');

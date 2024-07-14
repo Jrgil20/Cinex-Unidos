@@ -7,8 +7,6 @@ const socket = io('https://cinexunidos-production.up.railway.app',{
     },
 });
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    //enviamos un mensaje
     document.getElementById('sendButton').addEventListener('click', () => {
         const mensaje = chatInput.value;
         if (mensaje.trim() !== '') {
@@ -24,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             socket.emit('send-message', message);
         }
     });
-});
+
 
 // recibimos un mensaje del socket
 const ProcesarMessage = (payload) =>{

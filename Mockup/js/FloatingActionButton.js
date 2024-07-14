@@ -164,11 +164,18 @@ chatInput.classList.add('chat-input');
 chatInput.placeholder = 'Escribe tu Mensaje...';
 chatWindow.appendChild(chatInput);
 
+const userNameInput = document.createElement('input');
+userNameInput.classList.add('user-name-input');
+userNameInput.placeholder = 'Tu nombre';
+userNameInput.setAttribute('required', true);
+chatWindow.appendChild(userNameInput);
+
 const chatSendButton = document.createElement('button');
 chatSendButton.classList.add('chat-send-button');
 chatSendButton.setAttribute('id','sendButton');
 chatSendButton.textContent = 'Enviar Mensaje';
 chatWindow.appendChild(chatSendButton);
+
 
 
 floatingMenuIcon3.addEventListener('click', () => {
