@@ -23,7 +23,8 @@ const socket = io('https://cinexunidos-production.up.railway.app',{
         }
     });
 
-
+if (localStorage.getItem('nombreUsuario'))
+    nombreUsuario = localStorage.getItem('nombreUsuario');
 // recibimos un mensaje del socket
 const ProcesarMessage = (payload) =>{
     //console.log(payload);

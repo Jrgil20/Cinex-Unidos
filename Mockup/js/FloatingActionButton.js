@@ -69,35 +69,45 @@ const modalForm = document.querySelector('.modal-content');
 const userNameLabel = document.createElement('h5');
 userNameLabel.textContent = 'Nombre de Usuario';
 userNameLabel.style.marginBottom = '10px';
-modalForm.appendChild(userNameLabel);
+floatingModalForm.appendChild(userNameLabel);
 
 const userNameInput = document.createElement('input');
 userNameInput.classList.add('user-name-input');
 userNameInput.placeholder = 'Tu nombre';
 userNameInput.setAttribute('required', true);
-modalForm.appendChild(userNameInput); 
+userNameInput.setAttribute('maxlength', 20);
+userNameInput.setAttribute('minlength', 3);
+if (localStorage.getItem('nombreUsuario'))
+    userNameInput.value = localStorage.getItem('nombreUsuario');
+else
+    userNameInput.value = 'User1';
+    floatingModalForm.appendChild(userNameInput); 
 
 const saveButton = document.createElement('button');
 saveButton.type = 'submit';
 saveButton.textContent = 'Guardar Preferencias';
 saveButton.classList.add('save-button');
-modalForm.appendChild(saveButton);
+floatingModalForm.appendChild(saveButton);
 
 let nombreUsuario = '';
 saveButton.addEventListener('click', function() {
     console.log('Guardar preferencias...');
     nombreUsuario = userNameInput.value;
+    localStorage.setItem('nombreUsuario', nombreUsuario);
   });
+
+const floatingModaltheme = document.createElement('div');
+floatingModalForm.appendChild(floatingModaltheme);
 
 const floatingModalCheckbox = document.createElement('input');
 floatingModalCheckbox.type = 'checkbox';
 floatingModalCheckbox.id = 'checkbox';
-floatingModalForm.appendChild(floatingModalCheckbox);
+floatingModaltheme.appendChild(floatingModalCheckbox);
 
 const floatingModalLabel = document.createElement('label');
 floatingModalLabel.htmlFor = 'checkbox';
 floatingModalLabel.textContent = 'Elegir Tema De color';
-floatingModalForm.appendChild(floatingModalLabel);
+floatingModaltheme.appendChild(floatingModalLabel);
 
 const floatingModalSwitch = document.createElement('label');
 floatingModalSwitch.classList.add('switch');
