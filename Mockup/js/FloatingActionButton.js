@@ -83,8 +83,10 @@ saveButton.textContent = 'Guardar Preferencias';
 saveButton.classList.add('save-button');
 modalForm.appendChild(saveButton);
 
+let nombreUsuario = '';
 saveButton.addEventListener('click', function() {
     console.log('Guardar preferencias...');
+    nombreUsuario = userNameInput.value;
   });
 
 const floatingModalCheckbox = document.createElement('input');

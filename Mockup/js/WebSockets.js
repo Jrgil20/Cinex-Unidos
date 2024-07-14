@@ -35,8 +35,20 @@ const ProcesarMessage = (payload) =>{
         if (action === 'chat-message'){
             const chatMessage = document.createElement('div');
             chatMessage.classList.add('chat-message');
-            chatMessage.textContent = content;
             
+            // Crear un elemento span para mostrar el username
+            const userNameSpan = document.createElement('span');
+            userNameSpan.classList.add('username-label');
+            userNameSpan.style.fontSize = '12px';
+            userNameSpan.style.color = 'gray';
+            userNameSpan.style.marginRight = '10px';
+            userNameSpan.textContent = `@${nombreUsuario}`;
+
+            // Agregar el span de username y el contenido del mensaje al div de chatMessage
+            chatMessage.appendChild(userNameSpan);
+            const messageContent = document.createElement('span');
+            messageContent.textContent = content;
+            chatMessage.appendChild(messageContent);
 
             if (id !== socket.id) {
                 console.log(`mensaje entrante dice : ${content}`);
